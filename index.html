@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Fotographie | By Biaksang</title>
+    <meta name="description" content="Fotographie is a site built by Biaksang as a portfolio project. Biaksang is not a photographer, he is a web developer, he design and develop websites. You can find the source code for this project on Github">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148948939-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-148948939-2');
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/index.css">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="144x144"  href="assets/favicon/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div id="top-bar" class="">
+                <h1 id="title"><img src="assets/logos/logo.png" alt="logo" id="logo"><span>Fotographie</span></h1>
+                <button id="menu-btn" type="button" onclick="dt.controlMenu()">
+                    <span id="mb1"></span>
+                    <span id="mb2"></span>
+                    <span id="mb3"></span>
+                </button>
+                <div id="header-nav">
+                    <a href="#categories" class="header-nav" style="cursor: default">Categories</a>
+                    <a href="#anc" class="header-nav">About &amp; Contact</a>
+                    <a href="https://instagram.com/biaksang_xyz" class="header-nav" target="_blank" title="go to developer's instagram page">Instagram</a>
+                    <a href="https://pexels.com" class="header-nav" target="_blank" title="go to pexels home page">Pexels</a>
+                </div>
+            </div>
+            <section id="intro">
+                <h1 id="welcome-line">Welcome to <span>Fotographie</span>,<br>prepare to be amazed..</h1>
+                <button type="button" id="explore-btn" onclick="dt.explore()">
+                    Explore
+                    <svg>
+                        <polyline points="1,1 10,7 19,1" />
+                        <polyline points="1,7 10,13 19,7" />
+                    </svg>
+                </button>
+            </section>
+            <p id="developer">designed by <a href="https://biaksang.xyz" target="_blank">Biaksang</a></p>
+        </header>
+        <main>
+            <div id="category-main">
+                <h1 id="current-category"><img src="assets/logos/logo.png"><span></span></h1>
+                <a href="#categories">
+                    <button id="categories-btn"><svg><line x1="1" x2="19" y1="1" y2="1" /><line x1="1" x2="19" y1="7" y2="7" /><line x1="1" x2="19" y1="13" y2="13" /></svg>Categories</button>
+                </a>
+            </div>
+            <div id="photos"></div>
+        </main>
+        <div id="categories">
+            <div id="categories-back-layer" onclick="h.goBack()" ontouchstart="h.goBack()"></div>
+            <button type="button" id="exit-categories" onclick="h.goBack()">
+                <svg>
+                    <polyline points="1,1 19,19 10,10 19,1 1,19" />
+                </svg>
+            </button>
+            <div id="category-list">
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="wedding">Wedding</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="landscape">Landscape</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="people">People</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="foods">Foods</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="fashion">Fashion</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="pets">Pets</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="cars">Cars</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="tech">Tech</button>
+                <button type="button" class="category" onclick="p.loadCategory(this)" data-category="architecture">Architecture</button>
+            </div>
+        </div>
+        <div id="anc">
+            <button type="button" id="exit-anc" onclick="h.goBack()">
+                <svg>
+                    <polyline points="1,1 19,19 10,10 19,1 1,19" />
+                </svg>
+            </button>
+            <div class="sub-container">
+                <section>
+                    <h1>About Fotographie</h1>
+                    <p>Fotographie is a site built by <a href="https://biaksang.xyz" target="_blank">Biaksang</a> as a portfolio project. Biaksang is not a photographer, he is a web developer, he design and develop websites. You can find the source code for this project on <a href="https://github.com/BiakSang/fotographie" target="_blank">Github</a>.</p>
+                    <p>Photos used in this project are from <a href="https://pexels.com" target="_blank">pexels.com</a> and <a href="https://picsum.photos" target="_blank">picsum.photos</a>. They are free and has no copyright.</p>
+                    <div id="socials">
+                        <a href="https://biaksang.xyz" title="go to developer's website" target="_blank"><img src="assets/logos/bsx.png" alt="developer's website logo"></a>
+                        <a href="https://instagram.com/biaksang_xyz" title="developer's instagram page" target="_blank"><img src="assets/logos/instagram.png" alt="instagram logo"></a>
+                        <a href="https://github.com/BiakSang/fotographie" title="source code for this project" target="_blank"><img src="assets/logos/github.png" alt="github logo"></a>
+                    </div>
+                </section>
+                <section>
+                    <form id="contact-form" netlify>
+                        <h2>Contact me</h2>
+                        <p>This is a real form, it sends message to developer.</p>
+                        <div class="input">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" required id="email-input" onfocus="dt.movePlaceholderOnFocus(this)" onblur="dt.movePlaceholderOnBlur(this)" autocomplete="off">
+                        </div>
+                        <div class="input">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message-input" required onfocus="dt.movePlaceholderOnFocus(this)" onblur="dt.movePlaceholderOnBlur(this)"></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn">Submit</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/js/photos.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
